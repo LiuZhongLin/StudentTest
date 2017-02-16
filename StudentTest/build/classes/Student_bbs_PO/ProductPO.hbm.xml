@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="Student_bbs_PO.ProductPO" table="product" catalog="student_bbs">
+		<id name="productid" type="int">
+			<column name="productid"/>
+			<generator class="assigned"/>
+		</id>
+		
+		<property name="productTitle" type="string">
+			<column name="productTitle" length="40" not-null="true"/>
+		</property>
+		<property name="productContent" type="string">
+			<column name="productContent" length="255" not-null="true"/>
+		</property>
+		<property name="price" type="string">
+			<column name="price" length="10" not-null="true"/>
+		</property>
+		<property name="photoPath" type="string">
+			<column name="photoPath" length="100" not-null="true"/>
+		</property>
+		<property name="pulishTime" type="string">
+			<column name="publishTime" length="0" not-null="true"/>
+		</property>
+		<property name="uid" type="int">
+			<column name="uid" length="4" not-null="true"/>
+		</property>
+		
+	</class>
+</hibernate-mapping>

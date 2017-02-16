@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+
+	<package name="default" extends="struts-default">
+		<action name="loginAction" class="Student_bbs_Action.LoginAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="registerAction" class="Student_bbs_Action.RegisterAction">
+			<result name="success">/suc_reg.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		<action name="postAction" class="Student_bbs_Action.PostAction">
+			<result name="success">/post.jsp</result>
+			<result name="input">/post.jsp</result>
+		</action>
+		<action name="replyAction" class="Student_bbs_Action.ReplyAction">
+			<result name="success">/post.jsp</result>
+			<result name="input">/m_post.jsp</result>
+		</action>
+		<action name="productAction" class="Student_bbs_Action.ProductAction">
+		<!-- fileUpload拦截器配置 -->
+		<interceptor-ref name="fileUpload">
+			<!-- 设置上传文件的最大字节数 -->
+			<param name="maximumSize">10000000</param>
+			<!-- 设置文件上传类型 -->
+			<param name="allowdTypes">
+				image/gif,image/png,image/jpeg,image/jpg,image/pjpeg
+			</param>
+		</interceptor-ref>
+		<!-- 设置上传文件保存的文件夹 -->
+		<interceptor-ref name="defaultStack" />
+			<param name="savePath">/save</param>
+			<result name="success">/product.jsp</result>
+			<result name="input">/product.jsp</result>
+		</action>
+		<action name="findAction" class="Student_bbs_Action.FindAction">
+			<result name="success">/findproduct.jsp</result>
+			<result name="input">/findproduct.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="Student_bbs_PO.ReplyPO" table="reply" catalog="student_bbs">
+		<id name="replyid" type="int">
+			<column name="replyid"/>
+			<generator class="assigned"/>
+		</id>
+		
+		<property name="content" type="string">
+			<column name="content" length="0" not-null="true"/>
+		</property>
+		<property name="uid" type="int">
+			<column name="uid" length="4" not-null="true"/>
+		</property>
+		<property name="pid" type="int">
+			<column name="pid" length="4" not-null="true"/>
+		</property>
+		<property name="publishTime" type="string">
+			<column name="publishTime" length="0" not-null="true"/>
+		</property>
+		
+	</class>
+</hibernate-mapping>
